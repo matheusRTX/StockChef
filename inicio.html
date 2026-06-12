@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle de Estoque</title>
+  <link rel="stylesheet" href="inicio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="aplicativo">
+
+    <div class="container">
+
+      <!-- cabeçalho -->
+      <div class="cabecalho">
+        <h1>Controle de Estoque</h1>
+        <p class="subtitulo">Visão geral do seu restaurante</p>
+      </div>
+
+      <!-- Cards -->
+      <div class="grade-resumo">
+
+        <div class="cartao-resumo">
+          <div class="icone"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="#009966" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-package-icon lucide-package">
+              <path
+                d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
+              <path d="M12 22V12" />
+              <polyline points="3.29 7 12 12 20.71 7" />
+              <path d="m7.5 4.27 9 5.15" />
+            </svg></div>
+
+          <div>
+            <p class="numero-grande">12</p>
+            <p class="rotulo">Itens cadastrados</p>
+          </div>
+        </div>
+
+        <div class="cartao-resumo-alerta">
+          <div class="icone-alerta"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="#E7000B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-trending-down-icon lucide-trending-down">
+              <path d="M16 17h6v-6" />
+              <path d="m22 17-8.5-8.5-5 5L2 7" />
+            </svg></div>
+
+          <div>
+            <p class="numero-grande">3</p>
+            <p class="rotulo">Estoque baixo</p>
+          </div>
+        </div>
+
+        <div class="cartao-resumo-aviso" id="cartao-resumo">
+          <div class="icone-aviso"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="#E78828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-triangle-alert-icon lucide-triangle-alert">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg></div>
+
+          <div>
+            <p class="numero-grande">2</p>
+            <p class="rotulo">Lotes vencendo em até 7 dias</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- validade -->
+      <div class="bloco">
+
+        <div id="flex1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="#E78828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-triangle-alert-icon lucide-triangle-alert">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+            <path d="M12 9v4" />
+            <path d="M12 17h.01" />
+          </svg>
+          <h2 class="titulo-secao2">Alertas de Validade</h2>
+        </div>
+
+        <div class="lista">
+
+          <div class="cartao-alerta-perigo">
+
+            <div>
+              <p class="nome-item">Tomate</p>
+              <p class="meta-item">5 kg — Vence 12/05/2026</p>
+            </div>
+
+            <span class="etiqueta-perigo">Vencido</span>
+          </div>
+
+          <div class="cartao-alerta-aviso">
+
+            <div>
+              <p class="nome-item">Alface</p>
+              <p class="meta-item">3 un — Vence 16/05/2026</p>
+            </div>
+
+            <span class="etiqueta-aviso">3d</span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- estoque baixo -->
+      <div class="bloco">
+
+        <div id="flex">
+          <div class="icone-alerta"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="#E7000B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-trending-down-icon lucide-trending-down">
+              <path d="M16 17h6v-6" />
+              <path d="m22 17-8.5-8.5-5 5L2 7" />
+            </svg></div>
+          <h2 class="titulo-secao">Estoque Baixo</h2>
+        </div>
+
+        <div class="lista">
+
+
+
+          <div class="cartao-linha-perigo">
+            <div>
+              <p class="nome-item">Arroz</p>
+              <p class="meta-item">Grãos</p>
+            </div>
+
+            <div class="texto-direita">
+              <p class="quantidade-baixa">2 kg</p>
+              <p class="meta-item">Mín: 5</p>
+            </div>
+          </div>
+
+
+          <div class="cartao-linha-perigo">
+            <div>
+              <p class="nome-item">Feijão</p>
+              <p class="meta-item">Grãos</p>
+            </div>
+
+            <div class="texto-direita">
+              <p class="quantidade-baixa">2 kg</p>
+              <p class="meta-item">Mín: 5</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <!-- movimentações -->
+      <div class="bloco">
+        <div id="flex1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="#3B78FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-package-open-icon lucide-package-open">
+            <path d="M12 22v-9" />
+            <path
+              d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z" />
+            <path
+              d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13" />
+            <path
+              d="M21 12.43a1.93 1.93 0 0 0 0-3.36L8.83 2.2a1.64 1.64 0 0 0-1.63 0L3 4.57a1.93 1.93 0 0 0 0 3.36l12.18 6.86a1.636 1.636 0 0 0 1.63 0z" />
+          </svg>
+          <h2 class="titulo-secao3">Movimentações Recentes</h2>
+        </div>
+
+        <div class="lista">
+
+          <div class="cartao-linha">
+
+            <span class="icone-movimento-sucesso">⬇</span>
+
+            <div class="flexivel">
+              <p class="nome-item">Tomate</p>
+              <p class="meta-item">13/05 09:21</p>
+            </div>
+
+            <span class="etiqueta-sucesso">+10 kg</span>
+
+          </div>
+
+          <div class="cartao-linha">
+
+            <span class="icone-movimento-perigo">⬆</span>
+
+            <div class="flexivel">
+              <p class="nome-item">Arroz</p>
+              <p class="meta-item">13/05 12:45</p>
+            </div>
+
+            <span class="etiqueta-perigo">-2 kg</span>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- menu -->
+    <div class="navegacao-inferior">
+      <button id="esquerda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-house-icon lucide-house">
+          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+          <path
+            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        </svg>
+        <a class="item-nav" href="inicio.html">Início</a>
+      </button>
+
+      <button id="esp1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-archive-icon lucide-archive">
+          <rect width="20" height="5" x="2" y="3" rx="1" />
+          <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+          <path d="M10 12h4" />
+        </svg>
+        <a class="item-nav" href="estoque.html">Estoque</a>
+      </button>
+
+      <button id="esp2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-qr-code-icon lucide-qr-code">
+          <rect width="5" height="5" x="3" y="3" rx="1" />
+          <rect width="5" height="5" x="16" y="3" rx="1" />
+          <rect width="5" height="5" x="3" y="16" rx="1" />
+          <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
+          <path d="M21 21v.01" />
+          <path d="M12 7v3a2 2 0 0 1-2 2H7" />
+          <path d="M3 12h.01" />
+          <path d="M12 3h.01" />
+          <path d="M12 16v.01" />
+          <path d="M16 12h1" />
+          <path d="M21 12v.01" />
+          <path d="M12 21v-1" />
+        </svg>
+        <a class="item-nav" href="qrcode.html">QR Code</a>
+      </button>
+
+      <button id="esp3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-shopping-cart-icon lucide-shopping-cart">
+          <circle cx="8" cy="21" r="1" />
+          <circle cx="19" cy="21" r="1" />
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+        </svg>
+        <a class="item-nav" href="compras.html">Compras</a>
+      </button>
+
+      <button id="esp4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-cooking-pot-icon lucide-cooking-pot">
+          <path d="M2 12h20" />
+          <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8" />
+          <path d="m4 8 16-4" />
+          <path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8" />
+        </svg>
+        <a class="item-nav" href="pratos.html">Pratos</a>
+      </button>
+
+      <button id="esp4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-book-text-icon lucide-book-text">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+          <path d="M8 11h8" />
+          <path d="M8 7h6" />
+        </svg>
+        <a class="item-nav" href="pratos.html">Cardapio</a>
+      </button>
+
+      <button id="direita">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-clock-icon lucide-clock">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+        <a class="item-nav" href="historico.html">Histórico</a>
+      </button>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
