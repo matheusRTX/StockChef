@@ -3,28 +3,27 @@ Nome do projeto
 StockChef
 
 Integrantes da equipe
-Matheus Moreira Diniz
-Pedro Olavo
-Lucas Quintão
-Fabrício
-Gabriel Rodrigues
-Gabriel Lucas
-Stack utilizada
+Matheus Moreira Diniz,
+Pedro Olavo,
+Lucas Quintão,
+Fabrício,
+Gabriel Rodrigues,
+Gabriel Lucas,
 
-Frontend
+Stack utilizada:
 
+Frontend:
 HTML5
 CSS3
 JavaScript
 
-Backend
-
+Backend:
 Python
 Flask
 
-Banco de Dados
-
+Banco de Dados:
 MySQL
+
 Breve descrição do sistema
 
 O StockChef é um sistema inteligente de gerenciamento de estoque para restaurantes. Seu objetivo é auxiliar no controle de produtos armazenados, registrando entradas e saídas de itens, monitorando datas de validade e facilitando a organização do estoque.
