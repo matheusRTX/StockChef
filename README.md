@@ -2,7 +2,7 @@
 
 Este repositório apresenta o sistema Pith, com:
 
-- Backend em Flask, organizado com o padrão *application factory* (`create_app`);
+- Backend em Flask
 - SQLAlchemy como ORM, com o objeto `db` centralizado em `models/database.py`;
 - Model herdando de `db.Model`, com os métodos de persistência (`salvar`, buscas);
 - Controllers para receber requisições HTTP e renderizar as páginas;
