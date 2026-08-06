@@ -1,0 +1,369 @@
+:root {
+    --background: hsl(30, 25%, 97%);
+    --titulos: hsl(20, 20%, 12%);
+    --subtitulo: hsl(20, 10%, 50%);
+    --border: hsl(30, 15%, 88%);
+    --cor-icones-menu: hsl(20, 10%, 50%);
+    --transicao-icones-menu: hsl(20, 20%, 12%);
+    --radius: 0.75rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--background);
+    color: var(--titulos);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+/* ESTRUTURA E LAYOUT GERAL */
+.aplicativo {
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.container {
+    max-width: 58rem;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-items: center;
+}
+
+
+/* 4. CABEÇALHO */
+.cabecalho {
+    margin-bottom: 1.5rem;
+}
+
+.cabecalho h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#dados {
+    margin-left: 13.5rem;
+}
+
+
+
+
+/* MENU DE NAVEGAÇÃO INFERIOR (Footer / Navbar) */
+.navegacao-inferior {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background);
+    backdrop-filter: blur(8px);
+    border-top: solid 1px var(--border);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 50;
+    padding-top: 1%;
+}
+
+.navegacao-inferior * {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Botões de extremidade do menu */
+#direita {
+    margin-right: 4%;
+}
+
+#esquerda {
+    margin-left: 4%;
+}
+
+.item-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.7rem;
+    color: var(--subtitulo);
+    padding: 0.4rem 0.6rem;
+    padding-top: 0;
+    border-radius: var(--radius);
+    font-family: inherit;
+}
+
+
+
+/* EFEITOS DE HOVER E TRANSIÇÕES DOS ÍCONES DO MENU */
+#esquerda * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#esquerda:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+/* Botão Estoque */
+#esp1 * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#esp1:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+#flexx {
+    display: flex;
+}
+
+/* Botão QR Code*/
+#esp2 * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#esp2:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+/* Botão Compras*/
+#esp3 * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#esp3:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+/* Botões Pratos / Cardápio (esp4) */
+#esp4 * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#esp4:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+/* Botão Direita */
+#direita * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#direita:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+.dados-cardapio {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.btn-novo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #2e7d4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.btn-novo:hover {
+    background-color: #256040;
+    box-shadow: 0 3px 8px rgba(46, 125, 79, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-novo:active {
+    background-color: #1e4f34;
+    transform: translateY(0px);
+}
+
+.cardapio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3%;
+    justify-content: space-between;
+}
+
+
+#caixa-item.aberto {
+    max-height: 500px; /* ajuste conforme necessário */
+}
+
+.desc {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    margin-bottom: 3%;
+}
+
+#caixa-item {
+    max-width: 520px;
+    background: #fff;
+    border: 0.5px solid #e0e0d8;
+    border-radius: 12px;
+    max-height: 80px;
+    overflow: hidden;
+    transition: 0.35s;
+}
+
+
+.caixa-item1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        width: 100%;
+        background-color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+}
+
+.caixa-item2 {
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+
+.comida-item {
+    color: #f5a623;
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+#seta{
+position: relative;
+left: 205%;
+font-weight: 500;
+font-size: 25px;
+display: inline-block;
+transform: rotate(180deg);
+}
+#seta.virar{transform: rotate(0deg);}
+
+#ppd{
+        padding: 1.25rem 1.5rem;
+        padding-top: 0;
+}
+
+.text-item {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 2px;
+}
+
+.text-desc {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    font-size: 13px;
+    color: #888;
+    margin-left: 40%;
+}
+
+.text-desc1 {
+    font-size: 14px;
+    color: #888;
+    margin: 0.7rem 0 0;
+    margin-bottom: 3%;
+    margin-top: 0;
+}
+
+.ingredientes {
+    margin-top: 1.25rem;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 5px;
+}
+
+.desc-ingredientes {
+    display: flex;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.desc-ingredientes1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#caixa {
+    border: 1px solid #d0d0c8;
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-top: 0;
+}
+
+.preparo {
+    margin-top: 1.25rem;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+li {
+    font-size: 14px;
+    color: #888;
+
+}
+
+.remover {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-remover {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #e53935;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+
+.comida-item2 {
+    color: rgb(71, 71, 71);
+    font-size: 20px;
+    margin-top: 2px;
+}
