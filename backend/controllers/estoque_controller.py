@@ -1,0 +1,21 @@
+from flask import Blueprint, jsonify, session
+
+from backend.repositories.estoque_repository import EstoqueRepository
+
+estoque_api_bp = Blueprint('estoque_api', __name__, url_prefix='/api/estoque')
+
+
+class EstoqueController:
+    """Controller responsável pela consulta de estoque detalhado."""
+
+    @staticmethod
+    def listar():
+        if 'user_id' not in session:
+            return jsonify({"erro": "não autenticado"}), 401
+        dados = EstoqueRepository.listar_estoque(session['user_id'])
+        return jsonify(dados)
+
+
+# ---------------------- Registro das rotas ----------------------
+
+estoque_api_bp.add_url_rule('/listar', view_func=EstoqueController.listar, methods=['GET'])
