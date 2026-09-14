@@ -162,7 +162,7 @@ Navegação (protegida por login):
 3º instale as dependências:
 
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 4° Execute o backend:
