@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>StockChef - Cadastro</title>
+    <link rel="stylesheet" href="/static/css/cadastro.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card p-4 shadow" style="width: 450px;">
+        <h3 class="text-center mb-4">Criar Conta StockChef</h3>
+
+        {% with mensagens = get_flashed_messages(with_categories=true) %}
+          {% if mensagens %}
+            {% for categoria, mensagem in mensagens %}
+              <div class="alerta alerta-{{ categoria }}">{{ mensagem }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="/cadastro" id="formCadastro">
+            <div class="mb-3">
+                <label class="form-label">Nome Completo</label>
+                <input type="text" name="nome" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" name="senha" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo de Usuário</label>
+                <select name="tipo" id="selectTipo" class="form-select" required>
+                    <option value="Administrador">Administrador (Dono/Gestor)</option>
+                    <option value="Funcionario">Funcionário</option>
+                </select>
+            </div>
+            <div class="mb-3" id="campoCodigoEstabelecimento" style="display: none;">
+                <label class="form-label">Código do Estabelecimento</label>
+                <input type="text" name="codigo_estabelecimento" class="form-control"
+                       placeholder="Ex: A1B2C3" maxlength="10" style="text-transform: uppercase;">
+                <span class="form-text">Peça esse código ao administrador do seu estabelecimento.</span>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+        </form>
+        <p class="text-center mt-3">Já tem conta? <a href="/login">Faça Login</a></p>
+    </div>
+
+    <script>
+        // Só pede o código de estabelecimento quando o tipo é Funcionário.
+        const selectTipo = document.getElementById('selectTipo');
+        const campoCodigo = document.getElementById('campoCodigoEstabelecimento');
+        const inputCodigo = campoCodigo.querySelector('input[name="codigo_estabelecimento"]');
+
+        function alternarCampoCodigo() {
+            const ehFuncionario = selectTipo.value === 'Funcionario';
+            campoCodigo.style.display = ehFuncionario ? 'block' : 'none';
+            inputCodigo.required = ehFuncionario;
+        }
+
+        selectTipo.addEventListener('change', alternarCampoCodigo);
+        alternarCampoCodigo();
+    </script>
+</body>
+</html>

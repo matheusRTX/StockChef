@@ -1,0 +1,510 @@
+:root {
+    --background: #FBF3E7;
+    --titulos: #2B1220;
+    --subtitulo: #9C4B62;
+    --border: #6B1E3F;
+    --border-menu: #F0DCC9;
+    --cor-icones-menu: #2B1220;
+    --transicao-icones-menu: #6B1E3F;
+    --radius: 0.75rem;
+    --fundo_btn: 345 30% 11%;
+    --card: #FFFFFF;
+
+    /* Cor de ação do fluxo de QR Code (Entrada = verde / Saída = vermelho) */
+    --cor-acao: #4B8B63;
+    --cor-acao-hover: #2F5D42;
+    --cor-acao-fraca: rgba(75, 139, 99, 0.12);
+}
+
+/* Quando a aba "Saída" está ativa, o tema muda para vermelho */
+#aplicativo.tema-saida {
+    --cor-acao: #B23A2E;
+    --cor-acao-hover: #93231A;
+    --cor-acao-fraca: rgba(178, 58, 46, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+}
+
+
+
+.div-mae {
+    width: 60%;
+    align-items: center;
+    display: flex;
+    margin-top: 2%;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+#aplicativo {
+    width: 100%;
+    min-width: 380px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.abas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--card);
+    border-radius: 8px;
+    padding: 4px;
+    margin: 20px 0;
+}
+
+#aba_saida {
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: solid 1px var(--border);
+    transition: 0.20s;
+}
+
+#aba_entrada {
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: solid 1px var(--border);
+    transition: 0.20s;
+}
+
+.div-qr-cd {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.conteudo-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.conteudo-qr img {
+    width: 120px;
+}
+
+.conteudo-qr p {
+    color: var(--subtitulo);
+    font-size: 14px;
+}
+
+.conteudo-qr button {
+    border: 0;
+    background: var(--cor-acao);
+    color: #fff;
+    height: 46px;
+    padding: 0 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.conteudo-qr button:hover {
+    background: var(--cor-acao-hover);
+}
+
+.div-select {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    margin-bottom: 22px;
+}
+
+.div-select label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--titulos);
+}
+
+.div-select label svg {
+    color: var(--subtitulo);
+}
+
+.div-select select {
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0 12px;
+}
+
+/* ── Menu inferior ── */
+.navegacao-inferior {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #FFFFFF;
+    backdrop-filter: blur(12px);
+    border-top: solid 1px var(--border-menu);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    z-index: 50;
+}
+
+.navegacao-inferior * {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#direita { margin-right: 4%; }
+#esquerda { margin-left: 4%; }
+
+.item-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.7rem;
+    color: var(--subtitulo);
+    padding: 0.4rem 0.6rem 0.4rem;
+    padding-top: 0;
+    border-radius: var(--radius);
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#esquerda *, #esp1 *, #esp2 *, #esp3 *, #esp4 *, #direita * {
+    color: var(--cor-icones-menu);
+    transition: 0.2s;
+}
+
+#esquerda:hover *, #esp1:hover *, #esp2:hover *,
+#esp3:hover *, #esp4:hover *, #direita:hover * {
+    color: var(--transicao-icones-menu);
+}
+
+/* Choices.js — deixando o select manual com a mesma cara dos demais cards */
+.choices {
+    width: 100%;
+    margin-bottom: 0;
+    color: black !important;
+}
+
+.choices__inner {
+    background: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    min-height: 48px !important;
+    padding: 7.5px 12px !important;
+    transition: border-color 0.2s ease;
+}
+
+.choices.is-focused .choices__inner,
+.choices.is-open .choices__inner {
+    border-color: var(--cor-acao) !important;
+}
+
+.choices__list--dropdown {
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    max-height: 200px !important;
+    overflow: hidden;
+
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background: black !important;
+    color: var(--titulos) !important;
+}
+
+.choices__list--single {
+    padding: 4px 16px 4px 2px !important;
+}
+
+/* btn entrada e saida */
+
+/* Estilo padrão do botão */
+.btn {
+  background: transparent;
+  color: var(--subtitulo);
+}
+
+/* Estilo de quando o botão estiver selecionado */
+.btn.ativa {
+  background-color: var(--card);
+  color: var(--titulos);
+}
+
+.choices__list--single{color: white !important;}
+
+/* registro de entrada */
+.cartao {
+  background-color: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border: solid 1px var(--border);
+}
+
+/* Título */
+.titulo {
+  color: var(--titulos);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.texto {
+  color: var(--titulos);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.campo {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  transition: 0.2s ease;
+  background-color: var(--card);
+  color: var(--titulos);
+}
+
+/* Campo de quantidade: verde na Entrada, vermelho na Saída (ver --cor-acao) */
+.campo-quantidade {
+  border: 2px solid var(--cor-acao);
+  background-color: var(--card);
+  color: var(--titulos);
+  transition: border-color 0.2s ease;
+}
+
+/* Estilo específico para o campo de data (Cinza na imagem) */
+#validade-entrada,
+#validade-saida {
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  color: var(--subtitulo);
+}
+
+/* Quando clicar no campo de data, ele também fica verde */
+#validade-entrada:focus,
+#validade-saida:focus {
+  border: 2px solid #4B8B63;
+  background-color: var(--card);
+}
+
+/* Botão Registrar */
+#botao {
+  width: 100%;
+  background-color: #4B8B63;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 6px;
+}
+
+#botao:hover {
+  background-color: #3C7A52; 
+}
+
+#botao-saida {
+  width: 100%;
+  background-color: #B23A2E;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 6px;
+}
+
+#botao-saida:hover {
+  background-color: #93231A; 
+}
+
+#ent { display: none; }
+#sai { display: none; }
+#cartao-item-encontrado { display: none; }
+#cartao-novo-item { display: none; }
+
+/* Espaçamento entre os campos de um formulário dentro de um .cartao */
+.bloco {
+  margin-bottom: 16px;
+}
+
+.bloco:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Ícone dentro dos botões de Registrar Entrada/Saída */
+#botao svg,
+#botao-saida svg,
+#botao-novo-item svg {
+  vertical-align: -3px;
+  margin-right: 6px;
+}
+
+/* ── Scanner de câmera ── */
+#conteudo-qr-escaneando {
+  width: 100%;
+}
+
+#leitor-camera {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#btn-parar-scanner {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--titulos);
+  height: 42px;
+  padding: 0 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#btn-parar-scanner:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.scanner-erro {
+  color: #B23A2E;
+  font-size: 13px;
+  text-align: center;
+  max-width: 260px;
+  margin-top: 4px;
+}
+
+.scanner-erro:empty {
+  display: none;
+}
+
+/* ── Card "Item encontrado" ── */
+.info-linha {
+  font-size: 15px;
+  color: var(--titulos);
+  margin-bottom: 8px;
+}
+
+.info-linha:last-child {
+  margin-bottom: 0;
+}
+
+.info-linha strong {
+  font-size: 17px;
+}
+
+.info-linha span {
+  color: var(--subtitulo);
+}
+
+/* ── Card "Novo item": selects de categoria/unidade com a mesma cara dos inputs ── */
+.campo select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B5E3C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 34px;
+  cursor: pointer;
+}
+
+select.campo {
+  border: 1px solid var(--border);
+}
+
+#botao-novo-item {
+  width: 100%;
+  background-color: var(--cor-acao);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 6px;
+}
+
+#botao-novo-item:hover {
+  background-color: var(--cor-acao-hover);
+}
+
+/* Mensagens de retorno ao registrar entrada/saída */
+.feedback {
+  min-height: 18px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.feedback.sucesso {
+  color: #4B8B63;
+}
+
+.feedback.erro {
+  color: #B23A2E;
+}
+
+/* ── Responsivo do Menu ── */
+@media (max-width: 480px) {
+  .item-nav {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.3rem;
+  }
+
+  .navegacao-inferior {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  #direita { margin-right: 1%; }
+  #esquerda { margin-left: 1%; }
+}
+
+body{background-color: #FBF3E7;
+color: var(--titulos);
+display: flex;
+justify-content: center;
+align-items: center;}
