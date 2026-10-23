@@ -1,0 +1,56 @@
+/* Cabeçalho compartilhado (marca + usuário + Sair) e título de página */
+.topo-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0 1rem;
+}
+
+.topo-marca {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #6B1E3F;
+    text-decoration: none;
+}
+
+.topo-usuario {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topo-nome {
+    font-size: 0.8rem;
+    color: #9C4B62;
+    text-transform: uppercase;
+}
+
+.topo-sair {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: #9C4B62;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.topo-sair:hover {
+    color: #6B1E3F;
+}
+
+.titulo-pagina {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2B1220;
+    margin: 0 0 1rem;
+}
+
+/* Item ativo do menu inferior */
+#esquerda.ativo *, #esp1.ativo *, #esp2.ativo *,
+#esp3.ativo *, #esp4.ativo *, #direita.ativo * {
+    color: #6B1E3F !important;
+    font-weight: 600;
+}
