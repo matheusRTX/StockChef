@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestão de Usuários - StockChef</title>
+  <link rel="stylesheet" href="/static/css/usuarios.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="aplicativo">
+    <div class="container">
+
+      <!-- cabeçalho -->
+      <div class="cabecalho-pagina">
+        <a href="/inicio" class="botao-voltar" aria-label="Voltar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </a>
+        <div>
+          <h2>Gestão de Usuários</h2>
+          <p class="subtitulo">Estabelecimento <strong>{{ usuario.codigo_estabelecimento }}</strong></p>
+        </div>
+      </div>
+
+      <p class="feedback" id="feedbackLista"></p>
+
+      <div id="listaFuncionarios" class="lista-funcionarios"></div>
+
+      <p id="funcionariosVazio" class="feedback" style="display:none;">
+        Nenhum funcionário se cadastrou neste estabelecimento ainda.<br>
+        Compartilhe o código <strong>{{ usuario.codigo_estabelecimento }}</strong> com sua equipe para que eles
+        possam se cadastrar.
+      </p>
+
+    </div>
+
+    <!-- Modal: Editar Funcionário -->
+    <div class="modal-overlay" id="modalFuncionarioOverlay">
+      <div class="modal">
+        <div class="modal-cabecalho">
+          <h2>Editar funcionário</h2>
+          <button class="modal-fechar" id="fecharModalFuncionario" type="button" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        <form class="modal-corpo" id="formFuncionario">
+          <input type="hidden" id="inputIdFuncionario" value="">
+
+          <div class="campo">
+            <label for="inputNomeFuncionario">Nome</label>
+            <input type="text" id="inputNomeFuncionario" name="nome" required>
+          </div>
+
+          <div class="campo">
+            <label for="inputEmailFuncionario">E-mail</label>
+            <input type="email" id="inputEmailFuncionario" name="email" required>
+          </div>
+
+          <div class="campo">
+            <label for="inputSenhaFuncionario">Nova senha (opcional)</label>
+            <input type="password" id="inputSenhaFuncionario" name="senha" placeholder="Deixe em branco para não alterar">
+          </div>
+
+          <div class="campo">
+            <label for="selectStatusFuncionario">Status</label>
+            <select id="selectStatusFuncionario" name="status">
+              <option value="Pendente">Pendente</option>
+              <option value="Aprovado">Aprovado</option>
+              <option value="Recusado">Recusado</option>
+            </select>
+          </div>
+
+          <div class="campo campo-checkbox">
+            <label>
+              <input type="checkbox" id="inputAtivoFuncionario" name="ativo">
+              Conta ativa
+            </label>
+          </div>
+
+          <p class="feedback" id="feedbackModalFuncionario"></p>
+
+          <div class="modal-rodape">
+            <button type="submit" class="btn-salvar">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="/static/js/usuarios.js"></script>
+</body>
+
+</html>
